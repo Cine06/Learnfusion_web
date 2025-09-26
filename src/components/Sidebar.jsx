@@ -17,7 +17,7 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <div className="sidebar">
         <div className="sidebar-logo">
-          <img src="/logo.png" alt="LearnFusion Logo" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="LearnFusion Logo" />
           <h2><span className="highlight">Learn</span>Fusion</h2>
         </div>
 

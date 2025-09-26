@@ -64,7 +64,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-left">
-        <img src="/logo.png" alt="LearnFusion Logo" className="logo" />
+        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="LearnFusion Logo" className="logo" />
         <h2 className="tagline">ELEVATE YOUR SKILLS WITH LEARNFUSION</h2>
       </div>
 
