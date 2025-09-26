@@ -1,14 +1,16 @@
 import React from "react";
 import "../styles/Sidebar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Sidebar = () => {
   const { setUser } = useAuth();
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     localStorage.clear();
-    setUser(null); 
-    window.location.href = "/";
+    setUser(null);
+    navigate("/");
   };
 
   return (
