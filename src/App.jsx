@@ -83,7 +83,7 @@ function App() {
         <Route
           path="/report/:sectionName/:lessonName"
           element={
-            <PrivateRoute requiredRole-="Teacher">
+            <PrivateRoute requiredRole="Teacher">
               <Report />
             </PrivateRoute>
           }
