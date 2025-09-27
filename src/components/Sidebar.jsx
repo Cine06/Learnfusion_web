@@ -28,6 +28,7 @@ const Sidebar = () => {
         className="sidebar-toggle"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
       >
+        {isSidebarOpen ? <FaTimes /> : <FaBars />}
       </button>
       <div className={`sidebar-container ${isSidebarOpen ? "open" : ""}`}>
         <div className="sidebar">

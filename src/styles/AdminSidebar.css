@@ -1,5 +1,3 @@
-/* Styles specific to the Admin Sidebar Profile Section */
-
 .admin-profile {
   text-align: center;
   margin-bottom: 30px;
@@ -41,26 +39,26 @@
 @media (max-width: 768px) {
   .sidebar-container {
     position: fixed;
-    left: -500px; /* Hidden off-screen */
+    left: -500px; 
     top: 0;
     height: 100%;
     z-index: 1000;
     transition: left 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
+    background-color: rgba(0, 0, 0, 0.5); 
     width: 100%;
   }
 
   .sidebar-container.open {
-    left: 0; /* Slide in */
+    left: 0; 
   }
 
   .sidebar-container .sidebar {
-    width: 250px; /* Keep sidebar width consistent */
+    width: 230px; 
+    position: relative; 
     height: 100%;
   }
 
-  /* Adjust main content if needed when sidebar is open, assuming a general class */
   .dashboard-content, .form-container {
-    margin-left: 0; /* Full width on mobile */
+    margin-left: 0;
   }
 }

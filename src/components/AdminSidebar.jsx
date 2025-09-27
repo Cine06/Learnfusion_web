@@ -101,6 +101,7 @@ const AdminSidebar = () => {
   return (
     <>
       <button className="sidebar-toggle" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+        {isSidebarOpen ? <FaTimes /> : <FaBars />}
       </button>
       <div className={`sidebar-container ${isSidebarOpen ? "open" : ""}`}>
         <div className="sidebar">
@@ -125,7 +126,6 @@ const AdminSidebar = () => {
             <p className="admin-profile-name">{adminName}</p>
           </div>
 
-          {/* Navigation */}
           <ul className="sidebar-nav">
             <li>
               <NavLink
