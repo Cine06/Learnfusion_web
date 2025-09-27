@@ -1,4 +1,3 @@
-/* Styles specific to the Admin Sidebar Profile Section */
 
 .admin-profile {
   text-align: center;
@@ -44,7 +43,6 @@
   top: 15px;
   left: 15px;
   z-index: 1001; 
-  background: #333;
   color: white;
   border: none;
   padding: 10px;
