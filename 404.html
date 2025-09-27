@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LearnFusion - Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+      const l = window.location;
+
+      const url = new URL(l);
+
+      const path = url.searchParams.get('p');
+
+      window.location.replace(path ? `${url.origin}/LearnFusion_Web/${path}` : `${url.origin}/LearnFusion_Web/`);
+    </script>
+  </head>
+  <body></body>
+</html>
