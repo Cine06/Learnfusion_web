@@ -38,6 +38,7 @@
   justify-content: center;
   align-items: center; 
   flex: 1; 
+  padding: 2rem;
   overflow-y: auto; 
 }
 
@@ -49,15 +50,17 @@
 }
 
 .highlight { 
-  color: #05642d ;
+  color: #ffa500;
 }
 .fusion {
-  color: #ffa500;
+  color: #05642d;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
+  width: 100%; 
+  max-width: 450px;
 }
 
 .login-form label {
@@ -68,6 +71,7 @@
 }
 
 .login-form input, .login-form select {
+  padding: 16px;
   margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -142,6 +146,7 @@
   }
 
   .login-form input, .login-form select {
-    font-size: 16px;
+    padding: 14px 16px; 
+    font-size: 16px; 
   }
 }
