@@ -17,13 +17,14 @@ const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   useEffect(() => {
+    let isMounted = true;
     if (user) {
-      if (user.role === "Admin") {
-        navigate("/admin-dashboard", { replace: true });
-      } else if (user.role === "Teacher") {
-        navigate("/teacher-dashboard", { replace: true });
+      const dashboardPath = user.role === "Admin" ? "/admin-dashboard" : "/teacher-dashboard";
+      if ((user.role === "Admin" || user.role === "Teacher") && isMounted) {
+        navigate(dashboardPath, { replace: true });
       }
     }
+    return () => { isMounted = false; };
   }, [user, navigate]);
 
   const handleLogin = async (e) => {
@@ -95,6 +96,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               aria-label="Email"
+              autoComplete="email"
               required
             />
 
@@ -107,15 +109,10 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 aria-label="Password"
+                autoComplete="current-password"
                 required
               />
-              <button
-                type="button"
-                onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                className="password-toggle-btn"
-                aria-label={isPasswordVisible ? "Hide password" : "Show password"}
-                style={{ background: "transparent", border: "none" }}
-              >
+              <button type="button" onClick={() => setIsPasswordVisible(!isPasswordVisible)} className="password-toggle-btn" aria-label={isPasswordVisible ? "Hide password" : "Show password"}>
                 {isPasswordVisible ? <FiEyeOff /> : <FiEye />}
               </button>
             </div>

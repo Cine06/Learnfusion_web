@@ -223,15 +223,19 @@ td {
 
 .lf-modal-body {
   padding: 2rem;
-  overflow-y: auto; /* Allow body to scroll */
+  overflow-y: auto; 
   flex-grow: 1;
 }
 
 .lf-user-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem 1.5rem; /* Increased gap */
+  display: -ms-grid;                  
+  display: grid;                      
+  -ms-grid-columns: 1fr 1fr;          
+  grid-template-columns: 1fr 1fr;     
+  
+  gap: 1.25rem 1.5rem;      
 }
+
 
 .lf-form-group {
   display: flex;
@@ -239,7 +243,7 @@ td {
 }
 
 .lf-form-group label {
-  font-weight: 500; /* Lighter font weight */
+  font-weight: 500; 
   font-size: 0.875rem;
   color: #4b5563;
   margin-bottom: 0.5rem;

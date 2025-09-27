@@ -26,6 +26,7 @@
   color: var(--text-light);
   text-align: center;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -62,6 +63,7 @@
   width: 100%;
   max-width: 400px;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   animation: formFadeIn 0.5s ease-out forwards;
 }
@@ -82,6 +84,7 @@
 
 .login-form {
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
   gap: 0.5rem; 
