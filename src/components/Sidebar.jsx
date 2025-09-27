@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Sidebar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import logo from "../assets/logo.png";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Sidebar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { setUser } = useAuth();
   const navigate = useNavigate();
 
@@ -15,7 +17,13 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar-container">
+    <>
+      <button
+        className="sidebar-toggle"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      >
+        {isSidebarOpen ? <FaTimes /> : <FaBars />}
+      </button>
       <div className="sidebar">
         <div className="sidebar-logo">
           <img src={logo} alt="LearnFusion Logo" />
@@ -55,7 +63,7 @@ const Sidebar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

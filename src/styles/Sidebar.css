@@ -1,11 +1,7 @@
-.sidebar-container {
-  animation: slideIn 0.4s ease-in-out;
-}
-
 .sidebar {
   background-color: #05642d;
   color: white;
-  width: 220px;
+  width: 250px;
   height: 100vh;
   padding: 25px 18px;
   position: fixed;
@@ -121,21 +117,51 @@
   margin-left: 8px;
 }
 
+/* Responsive Sidebar Toggle */
+.sidebar-toggle {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001; /* Above sidebar overlay */
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
-  .sidebar {
+  .sidebar-toggle {
+    display: block; /* Visible on mobile */
+  }
+
+  .sidebar-container {
+    position: fixed;
+    left: -500px; /* Hidden off-screen */
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
     width: 100%;
-    position: relative;
-    height: auto;
-    box-shadow: none;
-    padding: 15px;
+  }
+
+  .sidebar-container.open {
+    left: 0; /* Slide in */
+  }
+
+  .sidebar-container .sidebar {
+    width: 250px; /* Keep sidebar width consistent */
+    height: 100%;
   }
 
   .sidebar-nav a {
     padding: 10px 12px;
     font-size: 15px;
   }
-
-  .sidebar-logo h2 {
-    font-size: 20px;
+  .main-content, .assessment-container, .message-container, .handouts-layout, .lesson-container {
+    margin-left: 0; /* Full width on mobile */
   }
 }
