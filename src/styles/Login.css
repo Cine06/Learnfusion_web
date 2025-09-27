@@ -132,24 +132,27 @@
 
 .password-toggle-btn {
   position: absolute;
-  right: 15px; 
-  bottom: 5px;
-  height: auto; 
-  width: auto; 
+  right: 15px;
   border: none;
-  background: transparent;
+  bottom: 5px;
+  background: transparent !important;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #6c757d;
-  font-size: 1.25rem; 
-  opacity: 0.6;
-  transition: opacity 0.2s ease;
+  font-size: 1.25rem;
+  transition: none;
 }
 
-.password-toggle-btn:hover {
-  opacity: 1;
+.password-toggle-btn:hover,
+.password-toggle-btn:active,
+.password-toggle-btn:focus,
+.password-toggle-btn:focus-visible {
+  background: transparent !important;
+  outline: none;
+  box-shadow: none;
+  color: #6c757d; 
 }
 
 .form-options {
