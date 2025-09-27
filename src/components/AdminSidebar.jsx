@@ -87,13 +87,12 @@ const AdminSidebar = () => {
   const handleLogout = () => {
     localStorage.clear();
     setUser(null);
-    window.location.href = "/";
+    navigate("/", { replace: true });
   };
 
   return (
     <div className="sidebar-container">
       <div className="sidebar">
-        {/* Profile Section (Top, Just Like Screenshot) */}
         <div className="admin-profile">
           <label htmlFor="profile-upload" className="admin-profile-pic-label">
             <img
