@@ -11,7 +11,7 @@
 
   const AdminDashboard = () => {
     const navigate = useNavigate();
-    const { user: adminUser } = useAuth();
+    const { user: adminUser, setUser } = useAuth();
     const [users, setUsers] = useState([]);
     const [filteredUsers, setFilteredUsers] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
@@ -218,9 +218,15 @@
     const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
     const totalPages = Math.ceil(filteredUsers.length / usersPerPage);
 
+    const handleLogout = () => {
+      localStorage.clear();
+      setUser(null);
+      navigate("/", { replace: true });
+    };
+
     return (
       <div className="dashboard-container">
-        <AdminSidebar />
+        <AdminSidebar onLogout={handleLogout} />
         <main className="dashboard-content">
           <h2 className="dashboard-title">Account Management</h2>
 
