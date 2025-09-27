@@ -70,36 +70,38 @@ const Login = () => {
       </div>
 
       <div className="login-right">
-        <h1 className="brand-title">
-          <span className="highlight">Learn</span>Fusion
-        </h1>
+        <div> 
+          <h1 className="brand-title">
+            <span className="highlight">Learn</span>Fusion
+          </h1>
 
-        <form className="login-form" onSubmit={handleLogin}>
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <form className="login-form" onSubmit={handleLogin}>
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
 
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
-          <div className="button-container">
-            <button type="submit" className="login-btn" disabled={loading}>
-              {loading ? "Logging in..." : "Login"}
-            </button>
-          </div>
-          {error && <p className="error-message">{error}</p>}
-        </form>
+            <div className="button-container">
+              <button type="submit" className="login-btn" disabled={loading}>
+                {loading ? "Logging in..." : "Login"}
+              </button>
+            </div>
+            {error && <p className="error-message">{error}</p>}
+          </form>
+        </div>
       </div>
     </div>
   );
