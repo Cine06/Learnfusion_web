@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../utils/supabaseClient";
-import bcrypt from "bcryptjs"; 
+import bcrypt from "bcryptjs";
 import { useAuth } from "../context/AuthContext";
 import logo from "../assets/logo.png"; 
 import "../styles/Login.css";
@@ -9,11 +9,11 @@ import "../styles/Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const { setUser } = useAuth(); 
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -64,35 +64,45 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <div className="login-left">
+      <aside className="login-left">
         <img src={logo} alt="LearnFusion Logo" className="logo" />
         <h2 className="tagline">ELEVATE YOUR SKILLS WITH LEARNFUSION</h2>
-      </div>
+      </aside>
 
-      <div className="login-right">
-        <div> 
+      <main className="login-right">
+        <div className="login-form-wrapper">
           <h1 className="brand-title">
-            <span className="highlight">Learn</span>Fusion 
+            <span className="highlight">Learn</span>
+            <span className="fusion">Fusion</span>
           </h1>
 
           <form className="login-form" onSubmit={handleLogin}>
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              aria-label="Email"
               required
             />
 
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <label htmlFor="password">Password</label>
+            <div className="password-input-container">
+              <input
+                id="password"
+                type={isPasswordVisible ? "text" : "password"}
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                aria-label="Password"
+                required
+              />
+              <button type="button" onClick={() => setIsPasswordVisible(!isPasswordVisible)} className="password-toggle-btn" aria-label={isPasswordVisible ? "Hide password" : "Show password"}>
+                {isPasswordVisible ? "Hide" : "Show"}
+              </button>
+            </div>
 
             <div className="button-container">
               <button type="submit" className="login-btn" disabled={loading}>
@@ -102,7 +112,7 @@ const Login = () => {
             {error && <p className="login-error-message">{error}</p>}
           </form>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
