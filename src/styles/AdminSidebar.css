@@ -38,26 +38,7 @@
   font-weight: 600;
 }
 
-/* Responsive Sidebar Toggle */
-.sidebar-toggle {
-  display: none; /* Hidden on desktop */
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1001; /* Above sidebar overlay */
-  background: #333;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 @media (max-width: 768px) {
-  .sidebar-toggle {
-    display: block; /* Visible on mobile */
-  }
-
   .sidebar-container {
     position: fixed;
     left: -500px; /* Hidden off-screen */

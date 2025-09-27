@@ -16,52 +16,59 @@ const Sidebar = () => {
     navigate("/", { replace: true });
   };
 
+  const handleLinkClick = () => {
+    if (window.innerWidth <= 768) {
+      setIsSidebarOpen(false);
+    }
+  };
+
   return (
     <>
       <button
         className="sidebar-toggle"
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
       >
-        {isSidebarOpen ? <FaTimes /> : <FaBars />}
       </button>
-      <div className="sidebar">
-        <div className="sidebar-logo">
-          <img src={logo} alt="LearnFusion Logo" />
-          <h2><span className="highlight">Learn</span>Fusion</h2>
-        </div>
+      <div className={`sidebar-container ${isSidebarOpen ? "open" : ""}`}>
+        <div className="sidebar">
+          <div className="sidebar-logo">
+            <img src={logo} alt="LearnFusion Logo" />
+            <h2><span className="highlight">Learn</span>Fusion</h2>
+          </div>
 
-        <ul className="sidebar-nav">
-          <li>
-            <NavLink to="/teacher-dashboard" className={({ isActive }) => (isActive ? "active" : "")}>
-              Dashboard
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/assessment" className={({ isActive }) => (isActive ? "active" : "")}>
-              Assessment
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/handouts" className={({ isActive }) => (isActive ? "active" : "")}>
-              Handouts
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/section" className={({ isActive }) => (isActive ? "active" : "")}>
-              Section
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/messages" className={({ isActive }) => (isActive ? "active" : "")}>
-              Messages
-            </NavLink>
-          </li>
-          <li>
-            <button className="logout-btn" onClick={handleLogout}>
-              Logout
-            </button>
-          </li>
-        </ul>
+          <ul className="sidebar-nav">
+            <li>
+              <NavLink to="/teacher-dashboard" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleLinkClick}>
+                Dashboard
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/assessment" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleLinkClick}>
+                Assessment
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/handouts" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleLinkClick}>
+                Handouts
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/section" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleLinkClick}>
+                Section
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/messages" className={({ isActive }) => (isActive ? "active" : "")} onClick={handleLinkClick}>
+                Messages
+              </NavLink>
+            </li>
+            <li>
+              <button className="logout-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );

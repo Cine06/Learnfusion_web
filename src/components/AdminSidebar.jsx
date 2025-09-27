@@ -92,10 +92,15 @@ const AdminSidebar = () => {
     navigate("/", { replace: true });
   };
 
+  const handleLinkClick = () => {
+    if (window.innerWidth <= 768) {
+      setIsSidebarOpen(false);
+    }
+  };
+
   return (
     <>
       <button className="sidebar-toggle" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-        {isSidebarOpen ? <FaTimes /> : <FaBars />}
       </button>
       <div className={`sidebar-container ${isSidebarOpen ? "open" : ""}`}>
         <div className="sidebar">
@@ -126,6 +131,7 @@ const AdminSidebar = () => {
               <NavLink
                 to="/admin-dashboard"
                 className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={handleLinkClick}
               >
                 Account Management
               </NavLink>
@@ -134,6 +140,7 @@ const AdminSidebar = () => {
               <NavLink
                 to="/sectionmanage"
                 className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={handleLinkClick}
               >
                 Section Management
               </NavLink>
@@ -142,6 +149,7 @@ const AdminSidebar = () => {
               <NavLink
                 to="/admin-handouts"
                 className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={handleLinkClick}
               >
                 Handouts Management
               </NavLink>
