@@ -99,7 +99,7 @@ const Login = () => {
                 {loading ? "Logging in..." : "Login"}
               </button>
             </div>
-            {error && <p className="error-message">{error}</p>}
+            {error && <p className="login-error-message">{error}</p>}
           </form>
         </div>
       </div>
