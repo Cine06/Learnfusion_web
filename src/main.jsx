@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "sweetalert2/dist/sweetalert2.min.css";
 
 import App from "./App.jsx";
@@ -24,7 +24,7 @@ import PrivateRoute from "./components/PrivateRoute.jsx";
 import { AuthProvider } from "./context/AuthContext";
 import DetailedChatView from "./components/DetailedChatView";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
   {
     element: <App />, 
