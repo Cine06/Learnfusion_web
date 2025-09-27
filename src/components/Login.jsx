@@ -72,8 +72,7 @@ const Login = () => {
       <div className="login-right">
         <div> 
           <h1 className="brand-title">
-            <span className="highlight">Learn</span>
-            <span className="fusion">Fusion</span>
+            <span className="highlight">Learn</span>Fusion 
           </h1>
 
           <form className="login-form" onSubmit={handleLogin}>
