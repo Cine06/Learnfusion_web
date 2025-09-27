@@ -56,6 +56,8 @@
 .login-form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 400px;
 }
 
 .login-form label {
@@ -128,14 +130,12 @@
   .login-left {
     flex: none; 
     padding: 20px;
-    min-height: auto;
     height: 25vh;
   }
 
   .login-right {
     flex: 1; 
     justify-content: flex-start;
-    padding: 2rem 1.5rem;
   }
 
   .login-form {
