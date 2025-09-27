@@ -5,7 +5,7 @@ import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Learnfusion_web/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>

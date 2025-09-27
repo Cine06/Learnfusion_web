@@ -26,84 +26,29 @@ function App() {
   return (
     <AuthProvider>
       <Routes>
-        {/* Public Route */}
         <Route path="/" element={<Login />} />
         <Route path="/unauthorized" element={<Unauthorized />} />
 
-        {/* Admin Routes */}
-        <Route path="/admin-dashboard" element={<PrivateRoute requiredRole="Admin"><AdminDashboard /></PrivateRoute> }/>
-        <Route path="/teacher-dashboard"element={<PrivateRoute requiredRole="Teacher"><TeacherDashboard /></PrivateRoute>}/>
-        <Route path="/add-user" element={<PrivateRoute requiredRole="Admin"><AddUser /></PrivateRoute>} />
-        <Route path="/sectionmanage" element={<PrivateRoute requiredRole="Admin"><AdminSectionManagement /></PrivateRoute>} />
-        <Route path="/admin-manage-section/:sectionName" element={<PrivateRoute requiredRole="Admin"><AdminManageSection /></PrivateRoute>} />
-        <Route path="/admin-handouts" element={<PrivateRoute requiredRole="Admin"><AdminHandouts /></PrivateRoute>} />
+        <Route element={<PrivateRoute requiredRole="Admin" />}>
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/add-user" element={<AddUser />} />
+          <Route path="/sectionmanage" element={<AdminSectionManagement />} />
+          <Route path="/admin-manage-section/:sectionName" element={<AdminManageSection />} />
+          <Route path="/admin-handouts" element={<AdminHandouts />} />
+        </Route>
 
-        <Route
-          path="/assessment"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <Assessment />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/handouts"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <Handouts />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/section"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <SectionManagement />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/manage-section/:sectionId" element={<PrivateRoute requiredRole="Teacher"><ManageSection /></PrivateRoute>} />
-
-        <Route
-          path="/assign-students/:sectionName"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <AssignStudents />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/messages"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <Message />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/report/:sectionName/:lessonName"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <Report />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/lesson/:id"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <LessonDetails />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/messages/chat/:otherUserId"
-          element={
-            <PrivateRoute requiredRole="Teacher">
-              <DetailedChatView />
-            </PrivateRoute>
-          }
-        />
+        <Route element={<PrivateRoute requiredRole="Teacher" />}>
+          <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
+          <Route path="/assessment" element={<Assessment />} />
+          <Route path="/handouts" element={<Handouts />} />
+          <Route path="/section" element={<SectionManagement />} />
+          <Route path="/manage-section/:sectionId" element={<ManageSection />} />
+          <Route path="/assign-students/:sectionName" element={<AssignStudents />} />
+          <Route path="/messages" element={<Message />} />
+          <Route path="/report/:sectionName/:lessonName" element={<Report />} />
+          <Route path="/lesson/:id" element={<LessonDetails />} />
+          <Route path="/messages/chat/:otherUserId" element={<DetailedChatView />} />
+        </Route>
       </Routes>
     </AuthProvider>
   );
