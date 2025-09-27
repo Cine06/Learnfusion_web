@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Sidebar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import logo from "../assets/logo.png";
 
 const Sidebar = () => {
   const { setUser } = useAuth();
@@ -17,7 +18,7 @@ const Sidebar = () => {
     <div className="sidebar-container">
       <div className="sidebar">
         <div className="sidebar-logo">
-          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="LearnFusion Logo" />
+          <img src={logo} alt="LearnFusion Logo" />
           <h2><span className="highlight">Learn</span>Fusion</h2>
         </div>
 

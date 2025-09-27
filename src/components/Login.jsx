@@ -73,8 +73,7 @@ const Login = () => {
       <main className="login-right">
         <div className="login-form-wrapper">
           <h1 className="brand-title">
-            <span className="highlight">Learn</span>
-            <span className="fusion">Fusion</span>
+            <span className="highlight">Learn</span>Fusion
           </h1>
 
           <form className="login-form" onSubmit={handleLogin}>
@@ -100,10 +99,17 @@ const Login = () => {
                 aria-label="Password"
                 required
               />
-              <button type="button" onClick={() => setIsPasswordVisible(!isPasswordVisible)} className="password-toggle-btn" aria-label={isPasswordVisible ? "Hide password" : "Show password"}>
+              <button
+                type="button"
+                onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                className="password-toggle-btn"
+                aria-label={isPasswordVisible ? "Hide password" : "Show password"}
+                style={{ background: "transparent", border: "none" }}
+              >
                 {isPasswordVisible ? <FiEyeOff /> : <FiEye />}
               </button>
             </div>
+
 
             <div className="button-container">
               <button type="submit" className="login-btn" disabled={loading}>
