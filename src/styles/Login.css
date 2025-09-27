@@ -38,7 +38,6 @@
   justify-content: center;
   align-items: center; 
   flex: 1; 
-  padding: 2rem;
   overflow-y: auto; 
 }
 
@@ -146,7 +145,7 @@
   }
 
   .login-form input, .login-form select {
-    padding: 14px 16px; /* Slightly reduce padding on smaller screens */
-    font-size: 16px; /* Ensure font size is not too small on mobile */
+    padding: 14px 20px; 
+    font-size: 16px;
   }
 }
