@@ -71,7 +71,7 @@
 }
 
 .login-form input, .login-form select {
-  padding: 12px 20px;
+  padding: 16px;
   margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #ccc;
