@@ -120,17 +120,26 @@
 
 .password-toggle-btn {
   position: absolute;
-  right: 1px;
-  top: 6px; 
-  bottom: 1px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 50px;
   border: none;
   background: transparent;
   cursor: pointer;
-  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-dark);
-  font-weight: bold;
+  font-size: 1.25rem; 
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 }
 
+.password-toggle-btn:hover {
+  opacity: 1;
+}
 .button-container {
   margin-top: 1.5rem;
   display: flex;

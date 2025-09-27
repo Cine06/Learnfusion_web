@@ -4,6 +4,7 @@ import { supabase } from "../utils/supabaseClient";
 import bcrypt from "bcryptjs";
 import { useAuth } from "../context/AuthContext";
 import logo from "../assets/logo.png"; 
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import "../styles/Login.css";
 
 const Login = () => {
@@ -100,7 +101,7 @@ const Login = () => {
                 required
               />
               <button type="button" onClick={() => setIsPasswordVisible(!isPasswordVisible)} className="password-toggle-btn" aria-label={isPasswordVisible ? "Hide password" : "Show password"}>
-                {isPasswordVisible ? "Hide" : "Show"}
+                {isPasswordVisible ? <FiEyeOff /> : <FiEye />}
               </button>
             </div>
 
