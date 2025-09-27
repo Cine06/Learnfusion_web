@@ -443,7 +443,7 @@ const AdminHandouts = () => {
               >
                 {isSelectionMode ? 'Cancel' : 'Archive'}
               </button>
-              {isSelectionMode && selectedHandouts.length > 0 && (
+              {isSelectionMode && (
                 <button
                   className="archive-btn"
                   onClick={handleArchiveSelected}

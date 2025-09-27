@@ -272,7 +272,7 @@ const AdminSectionManagement = () => {
             >
               {isSelectionMode ? 'Cancel' : 'Archive'}
             </button>
-            {isSelectionMode && selectedSections.length > 0 && (
+            {isSelectionMode && (
               <button
                 className="archive-btn"
                 onClick={handleArchiveSelected}

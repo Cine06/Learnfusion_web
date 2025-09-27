@@ -266,9 +266,44 @@
   @media (max-width: 768px) {
     .dashboard-container {
       margin-left: 0;
+      flex-direction: column;
     }
     .profile-name {
       display: none;
+    }
+    .main-content {
+      margin-left: 0;
+      padding: 16px;
+      padding-top: 70px; /* Space for sidebar toggle */
+    }
+
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  
+    .search-profile {
+      width: 100%;
+    }
+  
+    .search-bar {
+      width: 100%;
+    }
+  
+    .card {
+      padding: 16px;
+    }
+  
+    .profile-pic {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dashboard-title h1 {
+      font-size: 24px;
     }
     .main-content {
       margin-left: 0;

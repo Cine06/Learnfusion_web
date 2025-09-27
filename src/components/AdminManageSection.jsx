@@ -319,7 +319,7 @@ const AdminManageSection = () => {
           >
             {isSelectionMode ? 'Cancel' : 'Archive'}
           </button>
-          {isSelectionMode && selectedStudents.length > 0 && (
+          {isSelectionMode && (
             <button
               className="archive-btn"
               onClick={handleArchiveSelected}
@@ -327,7 +327,7 @@ const AdminManageSection = () => {
               <FaArchive /> ({selectedStudents.length})
             </button>
           )}
-          {isSelectionMode && selectedStudents.length > 0 && (
+          {isSelectionMode && (
             <button
               className="remove-btn"
               onClick={handleRemoveSelectedFromSection}

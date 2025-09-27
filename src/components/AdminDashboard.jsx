@@ -259,7 +259,7 @@
         >
           {isSelectionMode ? 'Cancel' : 'Archive'}
         </button>
-        {isSelectionMode && selectedUsers.length > 0 && (
+        {isSelectionMode && (
           <button
             className="archive-btn"
             onClick={handleArchiveSelected}
