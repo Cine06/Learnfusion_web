@@ -1,8 +1,6 @@
 .login-container {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden; /* Prevents scrollbars from flexbox behavior */
+  overflow: hidden; 
 }
 
 .login-left {
@@ -20,7 +18,7 @@
 .logo {
   width: 100px;
   margin-bottom: 15px;
-  margin-left: 50px;
+  align-items: center;
 }
 
 .tagline {
