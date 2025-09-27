@@ -33,8 +33,8 @@ function App() {
         {/* Admin Routes */}
         <Route path="/admin-dashboard" element={<PrivateRoute requiredRole="Admin"><AdminDashboard /></PrivateRoute> }/>
         <Route path="/teacher-dashboard"element={<PrivateRoute requiredRole="Teacher"><TeacherDashboard /></PrivateRoute>}/>
-        <Route path="/add-user" element={<AddUser />} />
-        <Route path="/sectionmanage" element={<AdminSectionManagement />} />
+        <Route path="/add-user" element={<PrivateRoute requiredRole="Admin"><AddUser /></PrivateRoute>} />
+        <Route path="/sectionmanage" element={<PrivateRoute requiredRole="Admin"><AdminSectionManagement /></PrivateRoute>} />
         <Route path="/admin-manage-section/:sectionName" element={<PrivateRoute requiredRole="Admin"><AdminManageSection /></PrivateRoute>} />
         <Route path="/admin-handouts" element={<PrivateRoute requiredRole="Admin"><AdminHandouts /></PrivateRoute>} />
 
@@ -62,7 +62,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/manage-section/:sectionId" element={<ManageSection />} />
+        <Route path="/manage-section/:sectionId" element={<PrivateRoute requiredRole="Teacher"><ManageSection /></PrivateRoute>} />
 
         <Route
           path="/assign-students/:sectionName"
