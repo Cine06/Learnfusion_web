@@ -11,7 +11,7 @@ const Sidebar = () => {
   const handleLogout = () => {
     localStorage.clear();
     setUser(null);
-    navigate("/");
+    navigate("/", { replace: true });
   };
 
   return (

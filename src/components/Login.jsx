@@ -1,20 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../utils/supabaseClient";
 import bcrypt from "bcryptjs";
 import { useAuth } from "../context/AuthContext";
-import logo from "../assets/logo.png"; 
+import logo from "../assets/logo.png";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import "../styles/Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { setUser } = useAuth(); 
+  const { user, setUser } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  useEffect(() => {
+    if (user) {
+      if (user.role === "Admin") {
+        navigate("/admin-dashboard", { replace: true });
+      } else if (user.role === "Teacher") {
+        navigate("/teacher-dashboard", { replace: true });
+      }
+    }
+  }, [user, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -49,9 +59,9 @@ const Login = () => {
       setUser(user);
 
       if (user.role === "Admin") {
-        navigate("/admin-dashboard");
+        navigate("/admin-dashboard", { replace: true });
       } else if (user.role === "Teacher") {
-        navigate("/teacher-dashboard");
+        navigate("/teacher-dashboard", { replace: true });
       } else {
         throw new Error("Unauthorized role.");
       }
