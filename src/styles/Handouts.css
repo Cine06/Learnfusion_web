@@ -234,6 +234,13 @@ button {
   width: 400px;
   transition: all 0.3s ease;
 }
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px; 
+}
+
 
 .search-bar:focus {
   outline: none;
